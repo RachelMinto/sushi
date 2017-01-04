@@ -1,0 +1,56 @@
+colors = {
+  text: #333333,
+  emphasis: #d60041
+  food: #ab7829
+  non_emphasis: #999
+  data: #787878
+  default: #ffffff
+  button_shadow: #a00030
+}
+
+button()
+  color: colors.default
+  padding: 0 18px 0 18px
+  float: right
+  background: linear-gradient(to bottom, colors.emphasis, colors.button_shadow)
+  &:hover
+    background: linear-gradient(to top, rgba(214,0,65,1), colors.button_shadow)
+
+slanted_button()
+  button()
+  color: colors.default
+  padding: 0 18px 0 0
+  float: right
+  position: relative
+  text-align: right
+  height: 28px
+  width: 83px
+  &:before
+    content: ""
+    width: 0
+    height: 0
+    position: absolute
+    top: 0
+    left: 0
+    display: block
+    border-top: 14px solid #1f1f1f
+    border-left: 14px solid #1f1f1f    
+    border-right: 14px solid transparent
+    border-bottom: 14px solid transparent
+
+overlay()
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  background: rgba(0, 0, 0, 0.6)
+  opacity: 0
+  img
+    width: auto
+    position: relative
+    vertical-align: middle
+
+box_shadow()
+  -webkit-box-shadow: inset -10px 0px 5px -6px #787878;
+  box-shadow: inset -5px 0px 5px -6px #787878;
+

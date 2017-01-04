@@ -1,0 +1,31 @@
+include /_mixins
+
+doctype html
+html
+  head
+    title Sushi Website
+    link(href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet")
+    +stylesheet_link_tag("application")
+    +javascript_include_tag("vendor/all")
+    +javascript_include_tag("handlebars_templates")
+  body
+    #container
+      header
+
+      .cart_preview
+      main
+        block content
+
+      footer
+        p Learn more about Kendo UI® SPA at
+          span  docs.telerik.com/kendo-ui.
+        p Copyright © 2016, Progress Software Corporation and/or its subsidiaries or affiliates. All Rights Reserved.
+
+      +javascript_include_tag("application") 
+      +javascript_include_tag("models/food_item")
+      +javascript_include_tag("collections/food_items", "collections/cart_items")
+      +javascript_include_tag("views/food_item", "views/menu", "views/cart", "views/index", "views/checkout", "views/header")
+      script(type="text/javascript").
+        App.food_items = new FoodItems(!{JSON.stringify(food_items)});      
+      +javascript_include_tag("router")
+      block scripts
